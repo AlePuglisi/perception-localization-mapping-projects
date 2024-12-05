@@ -1,0 +1,7 @@
+image: map1_mu2_multiplane.pgm
+resolution: 0.100000
+origin: [-9.463865, -5.489404, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+
