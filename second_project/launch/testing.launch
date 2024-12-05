@@ -1,6 +1,6 @@
 <launch>
     <param name="/use_sim_time" value="true" />
-    <arg name="path" default="/home/minion1/robotics/bags/" />
+    <arg name="path" default="(find second_project)/bags/" />
     <arg name="bag_1" default="P2_first.bag" />
     <arg name="bag_2" default="/P2_second.bag" />
 
