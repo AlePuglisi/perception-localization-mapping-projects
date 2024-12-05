@@ -60,7 +60,7 @@ Then, in RViz add by topic all the useful information to look at (then it is pos
 For further details on the task, refer to [first_project assignment](https://github.com/AlePuglisi/perception-localization-mapping-projects/blob/main/first_project.pdf) <br/>
 (being the first project with ROS, the structure of the node is not optimal)
 
-## second_project (mapping and waypoints slam)
+## second_project (mapping, slam, and waypoint navigation)
 
 ... COMING SOON, README WIP ...
 
