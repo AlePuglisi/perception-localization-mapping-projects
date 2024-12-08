@@ -10,12 +10,17 @@ The pdf [ROS_basics](https://github.com/AlePuglisi/perception-localization-mappi
 > [!IMPORTANT]
 > Even if in the pdf assignment there is a Google Drive link to the project data,
 > <br/>unfortunately that Drive is updated to the most recent academic year assignment (not to the one described in this Repo, 2023).<br/>
-> I will upload the bag files used for this project if I find it!
+> Refer to my Drive link to download the bags used in this project. 
 
 ## first_project (odometry)
 
 <img width=400 height=250 src="https://github.com/user-attachments/assets/06a8f912-daf4-48cb-baec-d58b6a6a3042">   <img width=350 height=250 src="https://github.com/user-attachments/assets/f02ca1b0-1b82-4ff7-bef7-37536381eb14">
 <br/>
+
+> [!NOTE]
+> bags available at this [Drive](https://drive.google.com/drive/folders/10B7Mg8ThTb4swSUDhQWUvD6HOool90-R?usp=sharing).
+> The two files P1_first.bag and P1_second.bag refer to two navigation recording session.
+
 We were asked to compute robot odometry given a ROS Bag file, containing the recording of a navigation session for an autonomous shuttle at Politecnico di Milano. 
 The Bag file contains information about the wheel encoder and a 2D LIDAR point cloud for visualization (in RViz).
 
@@ -59,8 +64,9 @@ To visualize TF and LIDAR signals, RViz has to be run in another Terminal:
 rosrun rviz rviz
 ```
 
-Then, in RViz add by topic all the useful information to look at (then it is possible to save a custom RViz config to run automatically). 
-<br/>We were not very skilled with ROS, the best practice is to start RViz in the launch itself and define a .rviz configuration file. 
+> [!IMPORTANT]
+> In RViz add by topic all the useful information to look at (then it is possible to save a custom RViz config to run automatically). 
+> We were not very skilled with ROS, the best practice is to start RViz in the launch itself and define a ".rviz" configuration file. 
 
 
 For further details on the task, refer to [first_project assignment](https://github.com/AlePuglisi/perception-localization-mapping-projects/blob/main/first_project.pdf) <br/>
@@ -70,7 +76,8 @@ For further details on the task, refer to [first_project assignment](https://git
 <img width=400 height=250 src=https://github.com/user-attachments/assets/54778a4b-020e-42b2-a8e8-6105746db9a8>
 
 Given a ROS Bag file with the recording of a teleoperation of the robot above inside the Lab, we have to create a map from scanner data, denoise the map manually, and then set up autonomous navigation on that map.
-For this project, a lightweight robot simulator is used, called ``stage`` (The best practice for simulation is to use Gazebo or other simulators ... I never use stage again to be honest)
+For this project, a lightweight robot simulator is used, called ``stage`` (The best practice for simulation is to use Gazebo or other simulators ... I never use stage again to be honest).
+This simulator is used for a simple kinematic and sensor simulation, but the Navigation stack used in this project is obviously compatible with Gazebo. 
 
 The Bag file contains: 
 - Data from single plane scanner in "/scan"
@@ -90,11 +97,25 @@ The structure of ``second_project`` package is as follows:
     Perform the mapping procedure from sensor data, which is necessary before navigation.
     3d laser Point cloud (from velodyne) is converted into 2d data by ``pointcloud_to_laserscan`` node (with proper parameter initialization).
 
-    The mapping output is then denoised manually to remove sensor noise that can affect navigation.
+    The mapping output is then denoised manually, to remove sensor noise that can affect navigation.
     
   - ``navigation``:<br/>
     Launch our navigation node (for waypoint management) and set all the parameters for the navigation toolbox.
+### Run the code:
+- **Mapping**:
+  
+- **Waypoint Navigation**:
+  <br/>The map used for navigation is selected in ``navigation.launch``, as the denoised map in /stage/nav_map.yaml.
 
+  As usual, start with the ``roscore``, then:
+  ```bash
+  # Terminal 1:
+  roslaunch second_project navigation.launch
+  ```
+  This will run both RViz for visualization (properly configured), and the stage simulator.
+  <br/>``navigation`` node will also run, and the robot will move to the waypoints specified in ``waypoints.csv``.
+  You can define different meaningful waypoints or change some navigation parameters to see how navigation behavior changes. 
+  
 For further details on the task, refer to [second_project assignment](https://github.com/AlePuglisi/perception-localization-mapping-projects/blob/main/second_project.pdf). <br/>
 While, for details on the ROS Navigation stack, you can refer to [LAB Slides](https://github.com/AlePuglisi/perception-localization-mapping-projects/blob/main/LAB_NAV.pdf)
 
