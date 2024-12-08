@@ -78,8 +78,9 @@ For further details on the task, refer to [first_project assignment](https://git
 
 
 > [!NOTE]
-> bags available at this [Drive](https://drive.google.com/drive/folders/17pQHKxioGbRE6v2I1SAPwcwlTDyNcyvS?usp=drive_link).
-> The two files P2_first.bag and P2_second.bag refer to two navigation recording session.
+> Bags available at this [Drive](https://drive.google.com/drive/folders/17pQHKxioGbRE6v2I1SAPwcwlTDyNcyvS?usp=drive_link).
+> The two files P2_first.bag and P2_second.bag refer to two navigation recording sessions.
+> <br/>To launch mapping, upload the bag files on /second_project/bags, or change the path to the bag file in ``mapping.launch``
 
 Given a ROS Bag file with the recording of a teleoperation of the robot above inside the Lab, we have to create a map from scanner data, denoise the map manually, and then set up autonomous navigation on that map.
 For this project, a lightweight robot simulator is used, called ``stage`` (The best practice for simulation is to use Gazebo or other simulators ... I never use stage again to be honest).
