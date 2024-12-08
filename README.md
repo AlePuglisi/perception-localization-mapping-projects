@@ -110,6 +110,23 @@ The structure of ``second_project`` package is as follows:
     Launch our navigation node (for waypoint management) and set all the parameters for the navigation toolbox.
 ### Run the code:
 - **Mapping**:
+  <br/>Remember to upload the bag files as defined above.
+  As usual, start with the ``roscore``, then:
+  ```bash
+  # Terminal 1:
+  roslaunch second_project mapping.launch
+  ```
+
+  This will start Rviz with the visualization of the online mapping procedure.
+  In Rviz both the 2D laser scan and the 3D sliced as 2D are visible.
+  At the end of the mapping procedure, it is possible to save the map by:
+  ```bash
+  # Terminal 2:
+  rosrun map_saver map_saver
+  ```
+  In the folder where this is called, we save the mapped environment as .pgm and .yaml files. 
+  For the project, we save the map created from both P2_first and P2_second recordings, with the map of 2D and 3D laser scan, those are available in /map_raw.
+  Then, the map used for navigation is denoised by hand, to avoid unexpected obstacles that affect navigation.  
   
 - **Waypoint Navigation**:
   <br/>The map used for navigation is selected in ``navigation.launch``, as the denoised map in /stage/nav_map.yaml.
