@@ -72,7 +72,7 @@ rosrun rviz rviz
 For further details on the task, refer to [first_project assignment](https://github.com/AlePuglisi/perception-localization-mapping-projects/blob/main/first_project.pdf) <br/>
 (being the first project with ROS, the structure of the node is not optimal)
 
-## second_project (Mapping, SLAM, and Waypoint Navigation)
+## second_project (Mapping and Waypoint Navigation)
 <img width=400 height=250 src=https://github.com/user-attachments/assets/54778a4b-020e-42b2-a8e8-6105746db9a8>
    <img width=400 height=250 src=https://github.com/user-attachments/assets/ca994bbc-07dd-44ef-bc9a-064b1eb451ef>
 
