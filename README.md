@@ -17,10 +17,6 @@ The pdf [ROS_basics](https://github.com/AlePuglisi/perception-localization-mappi
 <img width=400 height=250 src="https://github.com/user-attachments/assets/06a8f912-daf4-48cb-baec-d58b6a6a3042">   <img width=350 height=250 src="https://github.com/user-attachments/assets/f02ca1b0-1b82-4ff7-bef7-37536381eb14">
 <br/>
 
-> [!NOTE]
-> bags available at this [Drive](https://drive.google.com/drive/folders/10B7Mg8ThTb4swSUDhQWUvD6HOool90-R?usp=sharing).
-> The two files P1_first.bag and P1_second.bag refer to two navigation recording session.
-
 We were asked to compute robot odometry given a ROS Bag file, containing the recording of a navigation session for an autonomous shuttle at Politecnico di Milano. 
 The Bag file contains information about the wheel encoder and a 2D LIDAR point cloud for visualization (in RViz).
 
@@ -78,8 +74,6 @@ For further details on the task, refer to [first_project assignment](https://git
 
 
 > [!NOTE]
-> Bags available at this [Drive](https://drive.google.com/drive/folders/17pQHKxioGbRE6v2I1SAPwcwlTDyNcyvS?usp=drive_link).
-> The two files P2_first.bag and P2_second.bag refer to two navigation recording sessions.
 > <br/>To launch mapping, upload the bag files on /second_project/bags, or change the path to the bag file in ``mapping.launch``
 
 Given a ROS Bag file with the recording of a teleoperation of the robot above inside the Lab, we have to create a map from scanner data, denoise the map manually, and then set up autonomous navigation on that map.
